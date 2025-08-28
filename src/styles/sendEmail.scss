@@ -1,0 +1,68 @@
+.emailFormContainer {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .emailFormTitle {
+    width: 100%;
+    text-align: left;
+  }
+
+  .emailForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 50%;
+    min-width: 200px;
+
+    .emailInput,
+    .emailTextarea {
+      background-color: var(--input-background-color);
+      width: 100%;
+      padding: 7px;
+      border: 1px solid var(--input-border-color);
+      border-radius: 5px;
+      font-size: 1rem;
+      color: #000;
+      box-shadow: 0 0 5px rgba(229, 218, 70, 0.33);
+    }
+
+    .emailTextarea {
+      min-height: 100px;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-width: 2px;
+      border-color: var(--input-focus-border-color);
+      outline: none;
+      box-shadow: 0 0 5px rgba(229, 218, 70, 0.33);
+    }
+
+    .emailButton {
+      background-color: var(--theme-button-background);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      padding: 0 10px;
+      box-shadow: var(--button-box-shadow);
+      color: var(--theme-button-text);
+      border: 1px solid var(--theme-button-border);
+      margin-top: 25px;
+      height: 30px;
+      width: 100px;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: var(--theme-button-hover);
+        color: var(--theme-button-text);
+        border: 1px solid var(--theme-button-border);
+      }
+    }
+  }
+}

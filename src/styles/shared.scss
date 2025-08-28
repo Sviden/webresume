@@ -1,0 +1,72 @@
+:root {
+  /* General */
+  --text-color: #f5f5f5;
+  --input-background-color: #d2d2d1;
+  --input-border-color: #ccc;
+  --input-focus-border-color: #f8d420;
+
+  /* Footer */
+  --footer-background: #0d0808;
+  --footer-text-color: #f5f5f5;
+  --start-open-background: rgb(208 207 201 / 60%);
+
+  /* Icons */
+  --icons-color: #1a1a1a;
+  --icons-hover-color: #767575;
+
+  /* Section Container */
+  --section-container-background: #1a1a1a;
+  --section-container-background-fullscreen: #1a1a1a;
+  --section-container-action-bar: #1a1a1a;
+  --section-container-action-bar-text: #f5f5f5;
+  --section-container-action-bar-text-hover: #f5f5f5;
+  --section-container-box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.4);
+
+  /* Text */
+  --text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  ---box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+  /* Theme Button */
+  --theme-button-background: #1a1a1a;
+  --theme-button-text: #f5f5f5;
+  --theme-button-border: #1a1a1a;
+  --theme-button-hover: #f5f5f5;
+  --button-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.123);
+}
+
+[data-theme="light"] {
+  /* General */
+  --text-color: #111111;
+  --input-background-color: #e4e4dfb0;
+  --input-border-color: #507dc6ea;
+  --input-focus-border-color: #0548b4ea;
+
+  /* Footer */
+  --footer-background: rgba(208, 207, 201, 0.4);
+  --footer-text-color: #202020;
+  --start-open-background: rgba(208, 207, 201, 0.953);
+
+  /* Icons */
+  --icons-color: #cbc2a8;
+  --icons-hover-color: #767575;
+  --icons-text-color: #fffefe;
+
+  /* Section Container */
+  --section-container-background: rgb(255 255 255 / 81%);
+  --section-container-background-fullscreen: rgb(255, 255, 255);
+  --section-container-action-bar: #efc1369c;
+  --section-container-action-bar-text: #1f1e1e;
+  --section-container-action-bar-text-hover: #cfbe7f91;
+  --section-container-box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.4);
+
+  /* Text */
+  --box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.463);
+  --text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+  /* Theme Button */
+  --theme-button-background: #f7f6f3aa;
+  --theme-button-text: #1e1e1e;
+  --theme-button-border: #5f5959c7;
+  --theme-button-hover: #e3e3e3b9;
+  --button-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.123);
+}

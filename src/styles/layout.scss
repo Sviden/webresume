@@ -1,0 +1,109 @@
+@import "./shared.scss";
+
+.layoutContainer {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--section-container-background);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
+}
+
+.desktop {
+  width: 100%;
+  height: calc(100% - 50px);
+  position: relative;
+  overflow: hidden;
+  /* background handled by .layoutContainer */
+
+  @media (max-width: 768px) {
+  }
+
+  .foldersGrid {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    z-index: 1;
+    max-width: calc(100% - 20px);
+
+    @media (max-width: 768px) {
+      gap: 10px;
+      top: 5px;
+      left: 5px;
+      max-width: calc(100% - 10px);
+    }
+
+    .folderIcon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 8px;
+      transition: background-color 0.2s ease;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+
+      @media (max-width: 768px) {
+        padding: 12px;
+        min-height: 70px;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: rgba(255, 255, 255, 0.071);
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.201);
+      }
+
+      @media (max-width: 768px) {
+        &:active {
+          background-color: rgba(255, 255, 255, 0.3);
+          transform: scale(0.95);
+        }
+      }
+
+      .folderSvg {
+        font-size: 38px;
+        color: var(--icons-color);
+        margin-bottom: 5px;
+
+        @media (max-width: 768px) {
+          font-size: 36px;
+          margin-bottom: 3px;
+        }
+      }
+
+      .folderLabel {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--icons-text-color);
+        text-align: center;
+        line-height: 1.2;
+        word-wrap: break-word;
+        text-shadow: var(--text-shadow);
+        width: 100%;
+        max-width: 60px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        @media (max-width: 768px) {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}

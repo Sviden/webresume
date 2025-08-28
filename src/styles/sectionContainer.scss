@@ -1,0 +1,276 @@
+@import "./shared.scss";
+// Window wrapper for react-rnd
+.window {
+  z-index: 10;
+  touch-action: none;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+
+  @media (max-width: 768px) {
+    touch-action: manipulation;
+  }
+
+  &.active {
+    z-index: 100 !important;
+    opacity: 1;
+
+    .sectionContainer {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      // border: 2px solid #2196f3;
+    }
+  }
+
+  &.inactive {
+    z-index: 10 !important;
+    // opacity: 0.85;
+
+    .sectionContainer {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      border: 1px solid #ccc;
+    }
+
+    &:hover {
+      opacity: 0.95;
+      cursor: pointer;
+    }
+  }
+}
+
+.fullscreen.window {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-width: 100vw !important;
+  min-height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  z-index: 1000 !important;
+  transform: none !important;
+
+  .sectionContainer {
+    border-radius: 0;
+    background-color: var(--section-container-background-fullscreen);
+
+    .actionBar {
+      cursor: default;
+      .close {
+        border-radius: 0px !important;
+      }
+    }
+  }
+}
+
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: var(--section-container-background);
+  border-radius: 7px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, border 0.2s ease;
+  box-shadow: var(--section-container-box-shadow);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  .actionBar {
+    display: flex;
+    justify-content: flex-end;
+    color: var(--section-container-action-bar-text);
+    align-items: center;
+    background-color: var(--section-container-action-bar);
+    height: 30px;
+    cursor: move;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: none;
+    position: relative;
+
+    @media (max-width: 768px) {
+      height: 44px;
+      touch-action: manipulation;
+    }
+
+    .actionBtnsWrapper {
+      height: 100%;
+      display: flex;
+      position: relative;
+      z-index: 10;
+
+      .actionBtn {
+        display: flex;
+        cursor: pointer;
+        padding: 0 8px;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s ease;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+
+        @media (max-width: 768px) {
+          padding: 0 12px;
+          min-width: 44px;
+          min-height: 44px;
+        }
+
+        &:hover,
+        &:active {
+          background-color: var(--section-container-action-bar-text-hover);
+        }
+
+        &.close {
+          border-radius: 0 7px 0 0;
+          position: relative;
+          z-index: 20;
+
+          &:hover,
+          &:active {
+            background-color: #f44336;
+            color: white;
+          }
+
+          @media (max-width: 768px) {
+            &:active {
+              background-color: #d32f2f;
+              transform: scale(0.95);
+            }
+
+            // Prevent dragging when touching close button
+            &:before {
+              content: "";
+              position: absolute;
+              top: -5px;
+              right: -5px;
+              bottom: -5px;
+              left: -5px;
+              z-index: 21;
+            }
+          }
+        }
+
+        svg {
+          font-size: 16px;
+          pointer-events: none;
+
+          @media (max-width: 768px) {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    padding: 15px;
+    flex: 1;
+    overflow-y: auto;
+
+    h1,
+    h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: var(--text-color);
+      font-size: 18px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 12px;
+      color: var(--text-color);
+      font-size: 14px;
+    }
+
+    .skillsWrapper {
+      .skill {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 14px;
+
+        @media (max-width: 768px) {
+          padding: 6px 0;
+          font-size: 13px;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .skillName {
+          font-weight: 600;
+          color: var(--text-color);
+        }
+
+        .skillLevel {
+          color: #4caf50;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .experienceWrapper {
+      .experience {
+        margin-bottom: 15px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #eee;
+
+        @media (max-width: 768px) {
+          margin-bottom: 10px;
+          padding-bottom: 8px;
+        }
+
+        &:last-child {
+          border-bottom: none;
+          margin-bottom: 0;
+        }
+
+        .experienceName {
+          font-weight: bold;
+          margin-bottom: 6px;
+          color: #2196f3;
+          font-size: 15px;
+
+          @media (max-width: 768px) {
+            font-size: 14px;
+            margin-bottom: 4px;
+          }
+        }
+
+        .experienceDescription {
+          line-height: 1.5;
+          color: var(--text-color);
+          font-size: 13px;
+
+          @media (max-width: 768px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    // Game iframe wrapper styles
+    .gameIframeWrapper {
+      width: 100%;
+      height: 100%;
+
+      iframe {
+        border: none;
+        border-radius: 8px;
+        min-height: 500px;
+        background: white;
+      }
+    }
+  }
+}
+
+// Close button cursor styles
+.actionBtn.close {
+  cursor: pointer;
+}
