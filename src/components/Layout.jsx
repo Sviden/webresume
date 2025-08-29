@@ -14,6 +14,31 @@ const Layout = () => {
     if (savedBg) {
       setBackgroundImage(savedBg);
     }
+
+    // Handle mobile viewport and virtual keyboard issues
+    const handleResize = () => {
+      // Update viewport height for mobile browsers
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+
+    // Set initial viewport height
+    handleResize();
+
+    // Handle virtual keyboard on mobile
+    if ("virtualKeyboard" in navigator) {
+      navigator.virtualKeyboard.overlaysContent = true;
+    }
+
+    // Update viewport on resize (handles virtual keyboard show/hide)
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("orientationchange", handleResize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("orientationchange", handleResize);
+    };
   }, []);
 
   const handleOpenSettings = () => {

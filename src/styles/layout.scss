@@ -2,6 +2,10 @@
 
 .layoutContainer {
   height: 100vh;
+  height: calc(
+    var(--vh, 1vh) * 100
+  ); /* Use custom property for better mobile support */
+  height: 100dvh; /* Use dynamic viewport height for better mobile support */
   width: 100vw;
   background-color: var(--section-container-background);
   background-size: cover;
@@ -13,16 +17,22 @@
   left: 0;
   -webkit-overflow-scrolling: touch;
   touch-action: manipulation;
+  display: flex;
+  flex-direction: column;
 }
 
 .desktop {
   width: 100%;
   height: calc(100% - 50px);
+  flex: 1;
   position: relative;
   overflow: hidden;
   /* background handled by .layoutContainer */
 
   @media (max-width: 768px) {
+    height: calc(100% - 60px); /* Increase footer space on mobile */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .foldersGrid {
