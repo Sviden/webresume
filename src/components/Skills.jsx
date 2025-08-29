@@ -1,5 +1,6 @@
 import React from "react";
 import SectionContainer from "./SectionContainer";
+import { skillsInfo } from "../utils/cvDataExtractor";
 
 export default function Skills({
   onClose,
@@ -11,33 +12,29 @@ export default function Skills({
   windowId,
   isFullscreen,
 }) {
+  const renderSkillCategory = (title, skills) => (
+    <>
+      <h3>{title}</h3>
+      {skills.map((skill, index) => (
+        <div key={index} className="skill">
+          <div className="skillName">
+            <span>{skill.name}</span>
+          </div>
+          <div className="skillLevel">
+            <span>{skill.level}</span>
+          </div>
+        </div>
+      ))}
+    </>
+  );
+
   const skills = (
     <div className="skillsWrapper">
       <h2>Technical Skills</h2>
-      <div className="skill">
-        <div className="skillName">
-          <span>React</span>
-        </div>
-        <div className="skillLevel">
-          <span>Expert</span>
-        </div>
-      </div>
-      <div className="skill">
-        <div className="skillName">
-          <span>JavaScript</span>
-        </div>
-        <div className="skillLevel">
-          <span>Advanced</span>
-        </div>
-      </div>
-      <div className="skill">
-        <div className="skillName">
-          <span>CSS/SCSS</span>
-        </div>
-        <div className="skillLevel">
-          <span>Advanced</span>
-        </div>
-      </div>
+
+      {renderSkillCategory("Frontend Technologies", skillsInfo.frontend)}
+      {renderSkillCategory("Libraries & Frameworks", skillsInfo.libraries)}
+      {renderSkillCategory("Tools & Development", skillsInfo.tools)}
     </div>
   );
 

@@ -1,37 +1,90 @@
 :root {
   /* General */
   --text-color: #f5f5f5;
-  --input-background-color: #d2d2d1;
-  --input-border-color: #ccc;
-  --input-focus-border-color: #f8d420;
+  --input-background-color: #30314bc7;
+  --input-border-color: #3f3b53;
+  --input-focus-border-color: #161547;
 
   /* Footer */
-  --footer-background: #0d0808;
+  --footer-background: #1b1f23f7;
   --footer-text-color: #f5f5f5;
-  --start-open-background: rgb(208 207 201 / 60%);
+  --start-open-background: #1b1f23dc;
+  --start-open-background-hover: rgba(7, 12, 19, 0.816);
 
   /* Icons */
-  --icons-color: #1a1a1a;
-  --icons-hover-color: #767575;
+  --icons-color: #e4dfdf;
+  --icons-hover-color: #bfbfbf1e;
+  --icons-text-color: #f5f5f5;
 
   /* Section Container */
-  --section-container-background: #1a1a1a;
-  --section-container-background-fullscreen: #1a1a1a;
-  --section-container-action-bar: #1a1a1a;
+  --section-container-background: #15191cf7;
+  --section-container-background-fullscreen: #15191c;
+  --section-container-action-bar: #13151c;
   --section-container-action-bar-text: #f5f5f5;
-  --section-container-action-bar-text-hover: #f5f5f5;
+  --section-container-action-bar-text-hover: #394956f7;
   --section-container-box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.4);
 
   /* Text */
-  --text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  ---box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  --text-shadow: 0 0 10px rgba(0, 0, 0, 0.329);
+  --box-shadow: 0 0 10px 0 rgba(148, 147, 147, 0.175);
 
   /* Theme Button */
   --theme-button-background: #1a1a1a;
   --theme-button-text: #f5f5f5;
-  --theme-button-border: #1a1a1a;
-  --theme-button-hover: #f5f5f5;
-  --button-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.123);
+  --theme-button-border: #545353;
+  --theme-button-hover: #5d5c5c56;
+  --button-box-shadow: 1px 1px 4px 1px rgba(154, 154, 154, 0.123);
+
+  /* Action Buttons */
+  --primary-button-color: #2196f3;
+  --primary-button-hover: #1976d2;
+  --success-button-color: #4caf50;
+  --success-button-hover: #388e3c;
+  --button-text-color: #ffffff;
+  --button-shadow-primary: rgba(33, 150, 243, 0.3);
+  --button-shadow-success: rgba(76, 175, 80, 0.3);
+
+  /* Section Content Variables */
+  --section-heading-color: #f5f5f5;
+  --section-subheading-color: #2196f3;
+  --section-date-color: #999999;
+  --section-border-color: #333333;
+  --section-link-color: #2196f3;
+  --section-link-hover: #1976d2;
+
+  /* Experience Section */
+  --experience-title-color: #2196f3;
+  --experience-company-color: #f5f5f5;
+  --experience-date-color: #999999;
+  --experience-description-color: #f5f5f5;
+  --experience-border-color: #333333;
+
+  /* Skills Section */
+  --skill-name-color: #f5f5f5;
+  --skill-level-color: #4caf50;
+  --skill-level-background: rgba(76, 175, 80, 0.1);
+  --skill-category-color: #2196f3;
+  --skill-category-border: #2196f3;
+  --skill-border-color: #333333;
+
+  /* Education Section */
+  --education-degree-color: #2196f3;
+  --education-institution-color: #f5f5f5;
+  --education-date-color: #999999;
+  --education-description-color: #f5f5f5;
+  --education-border-color: #333333;
+
+  /* Languages Section */
+  --language-name-color: #f5f5f5;
+  --language-level-color: #4caf50;
+  --language-level-background: rgba(76, 175, 80, 0.1);
+
+  /* Scrollbar Variables - Dark Theme */
+  --scrollbar-track: #2a2a2a;
+  --scrollbar-thumb: #555555;
+  --scrollbar-thumb-hover: #666666;
+  --scrollbar-thumb-active: #777777;
+  --scrollbar-corner: #2a2a2a;
 }
 
 [data-theme="light"] {
@@ -48,7 +101,7 @@
 
   /* Icons */
   --icons-color: #cbc2a8;
-  --icons-hover-color: #767575;
+  --icons-hover-color: #bfbfbf1e;
   --icons-text-color: #fffefe;
 
   /* Section Container */
@@ -69,4 +122,175 @@
   --theme-button-border: #5f5959c7;
   --theme-button-hover: #e3e3e3b9;
   --button-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.123);
+
+  /* Action Buttons - same colors work well in light theme */
+  --primary-button-color: #2196f3;
+  --primary-button-hover: #1976d2;
+  --success-button-color: #4caf50;
+  --success-button-hover: #388e3c;
+  --button-text-color: #ffffff;
+  --button-shadow-primary: rgba(33, 150, 243, 0.3);
+  --button-shadow-success: rgba(76, 175, 80, 0.3);
+
+  /* Section Content Variables - Light Theme */
+  --section-heading-color: #111111;
+  --section-subheading-color: #2196f3;
+  --section-date-color: #666666;
+  --section-border-color: #e0e0e0;
+  --section-link-color: #2196f3;
+  --section-link-hover: #1976d2;
+
+  /* Experience Section - Light Theme */
+  --experience-title-color: #2196f3;
+  --experience-company-color: #111111;
+  --experience-date-color: #666666;
+  --experience-description-color: #111111;
+  --experience-border-color: #e0e0e0;
+
+  /* Skills Section - Light Theme */
+  --skill-name-color: #111111;
+  --skill-level-color: #4caf50;
+  --skill-level-background: rgba(76, 175, 80, 0.1);
+  --skill-category-color: #2196f3;
+  --skill-category-border: #2196f3;
+  --skill-border-color: #e0e0e0;
+
+  /* Education Section - Light Theme */
+  --education-degree-color: #2196f3;
+  --education-institution-color: #111111;
+  --education-date-color: #666666;
+  --education-description-color: #111111;
+  --education-border-color: #e0e0e0;
+
+  /* Languages Section - Light Theme */
+  --language-name-color: #111111;
+  --language-level-color: #4caf50;
+  --language-level-background: rgba(76, 175, 80, 0.1);
+
+  /* Scrollbar Variables - Light Theme */
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: #c1c1c1;
+  --scrollbar-thumb-hover: #a8a8a8;
+  --scrollbar-thumb-active: #909090;
+  --scrollbar-corner: #f1f1f1;
+}
+
+// Button Mixins
+// Usage examples:
+// .my-primary-btn { @include primary-button; }
+// .my-success-btn { @include success-button; }
+// .my-custom-btn { @include action-button-base; background: var(--custom-color); }
+@mixin action-button-base {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  color: var(--button-text-color);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 140px;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    padding: 10px 15px;
+    min-width: 130px;
+    font-size: 13px;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  svg {
+    font-size: 18px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+}
+
+@mixin primary-button {
+  @include action-button-base;
+  background: var(--primary-button-color);
+
+  &:hover {
+    background: var(--primary-button-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--button-shadow-primary);
+  }
+}
+
+@mixin success-button {
+  @include action-button-base;
+  background: var(--success-button-color);
+
+  &:hover {
+    background: var(--success-button-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--button-shadow-success);
+  }
+}
+
+// Custom Scrollbar Styling
+* {
+  // Webkit browsers (Chrome, Safari, newer Edge)
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: var(--scrollbar-thumb-hover);
+    }
+
+    &:active {
+      background: var(--scrollbar-thumb-active);
+    }
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: var(--scrollbar-corner);
+  }
+}
+
+// Firefox scrollbar styling
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+// Section container specific scrollbar styling
+.content {
+  // Enhanced scrollbar for content areas
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 3px;
+
+    &:hover {
+      background: var(--scrollbar-thumb-hover);
+    }
+  }
 }

@@ -5,7 +5,6 @@ import {
   startContentClose,
 } from "../../animations/animations";
 import "../../styles/start.scss";
-import { Tooltip } from "@mui/material";
 
 export default function Start({ handleOpenEmail, handleOpenPdf }) {
   const [isStartOpen, setIsStartOpen] = useState(false); // visual open state (anim target)
@@ -38,7 +37,7 @@ export default function Start({ handleOpenEmail, handleOpenPdf }) {
       const btnEl = startButtonRef.current;
       if (!isStartVisible) return;
       if (contentEl && contentEl.contains(e.target)) return;
-      if (btnEl && btnEl.contains(e.target)) return; // let button click toggle manage
+      if (btnEl && btnEl.contains(e.target)) return;
       setIsStartOpen(false);
     };
     document.addEventListener("mousedown", handler);
@@ -54,27 +53,15 @@ export default function Start({ handleOpenEmail, handleOpenPdf }) {
           <div className="recommendedSection">
             <div className="recommendedSectionTitle">Recommended</div>
             <div className="recommendedSectionContent">
-              <div className="pdfItem">
-                <div
-                  className="pdfLink"
-                  onClick={() => {
-                    setIsStartOpen(false);
-                    setIsStartVisible(false);
-                    if (handleOpenPdf) handleOpenPdf();
-                  }}
-                >
-                  <span>📄</span>CV Svitlana Denesiuk
-                </div>
-                <Tooltip title="Download PDF">
-                  <a
-                    href={cvPDF}
-                    download="MyFile.pdf"
-                    className="downloadBtn"
-                    title="Download PDF"
-                  >
-                    <DownloadOutlinedIcon />
-                  </a>
-                </Tooltip>
+              <div
+                className="pdfItem"
+                onClick={() => {
+                  setIsStartOpen(false);
+                  setIsStartVisible(false);
+                  if (handleOpenPdf) handleOpenPdf();
+                }}
+              >
+                <span>📄</span>CV Svitlana Denesiuk
               </div>
               <div
                 className="emailItem"

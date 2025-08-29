@@ -11,6 +11,7 @@ import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import About from "./About";
 import Skills from "./Skills";
 import Experience from "./Experience";
+import Education from "./Education";
 import MiniCandyCrush from "./MiniCandyCrush";
 import Quiz from "./Quiz";
 import Settings from "./footer/Settings";
@@ -55,6 +56,23 @@ const Desktop = forwardRef((props, ref) => {
         height: windowSize.height,
       };
     }
+
+    // PDF viewer should be larger on mobile for better usability
+    if (type === "pdf") {
+      const isMobile = windowSize.width <= 768;
+      if (isMobile) {
+        return {
+          width: Math.min(windowSize.width - 20, 380),
+          height: Math.min(windowSize.height - 80, 550),
+        };
+      } else {
+        return {
+          width: 850,
+          height: 650,
+        };
+      }
+    }
+
     return undefined;
   };
   const [openWindows, setOpenWindows] = useState([
@@ -84,6 +102,7 @@ const Desktop = forwardRef((props, ref) => {
     { name: "About", component: "about", icon: "folder" },
     { name: "Skills", component: "skills", icon: "folder" },
     { name: "Experience", component: "experience", icon: "folder" },
+    { name: "Education", component: "education", icon: "folder" },
     { name: "Mini Crush", component: "game", icon: "game" },
     { name: "Quiz", component: "quiz", icon: "game" },
   ];
@@ -199,6 +218,8 @@ const Desktop = forwardRef((props, ref) => {
         return <Skills key={window.id} {...commonProps} />;
       case "experience":
         return <Experience key={window.id} {...commonProps} />;
+      case "education":
+        return <Education key={window.id} {...commonProps} />;
       case "game":
         return <MiniCandyCrush key={window.id} {...commonProps} />;
       case "quiz":
