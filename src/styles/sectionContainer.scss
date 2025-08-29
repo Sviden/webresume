@@ -43,12 +43,31 @@
   bottom: 50px !important;
   width: 100vw !important;
   height: calc(100vh - 50px) !important;
+  height: calc(var(--vh, 1vh) * 100 - 50px) !important;
+  height: calc(100dvh - 50px) !important;
   min-width: 100vw !important;
   min-height: calc(100vh - 50px) !important;
+  min-height: calc(var(--vh, 1vh) * 100 - 50px) !important;
+  min-height: calc(100dvh - 50px) !important;
   max-width: 100vw !important;
   max-height: calc(100vh - 50px) !important;
+  max-height: calc(var(--vh, 1vh) * 100 - 50px) !important;
+  max-height: calc(100dvh - 50px) !important;
   z-index: 1000 !important;
   transform: none !important;
+
+  @media (max-width: 768px) {
+    bottom: 60px !important; // Mobile footer is 60px
+    height: calc(100vh - 60px) !important;
+    height: calc(var(--vh, 1vh) * 100 - 60px) !important;
+    height: calc(100dvh - 60px) !important;
+    min-height: calc(100vh - 60px) !important;
+    min-height: calc(var(--vh, 1vh) * 100 - 60px) !important;
+    min-height: calc(100dvh - 60px) !important;
+    max-height: calc(100vh - 60px) !important;
+    max-height: calc(var(--vh, 1vh) * 100 - 60px) !important;
+    max-height: calc(100dvh - 60px) !important;
+  }
 
   .sectionContainer {
     border-radius: 0;
